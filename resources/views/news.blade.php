@@ -1,0 +1,1 @@
+<x-layout title="News"><x-page-heading title="The Aurora journal" intro="Meeting notes, venue stories and community updates from a fictional event in formation." /><section class="section news-grid news-page">@foreach(config('event.news') as $article)<x-news-card :article="$article" />@endforeach</section></x-layout>

@@ -1,0 +1,2 @@
+@props(['article'])
+<article class="news-card"><a href="{{ route('news.show',$article['slug']) }}" class="image-wrap"><img src="{{ $article['image'] }}" alt="" loading="lazy"></a><div><p class="eyebrow">{{ $article['category'] }} · {{ $article['date'] }}</p><h3><a href="{{ route('news.show',$article['slug']) }}">{{ $article['title'] }}</a></h3><p>{{ $article['excerpt'] }}</p><a class="arrow-link" href="{{ route('news.show',$article['slug']) }}">Read story →</a></div></article>

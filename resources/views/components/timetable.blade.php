@@ -1,0 +1,3 @@
+@props(['compact' => false])
+@php($schedules = config('event.schedules'))
+<div class="schedule" data-schedule><div class="schedule-switch" role="tablist"><button class="active" role="tab" data-schedule-tab="amateur">Amateur</button><button role="tab" data-schedule-tab="elite">Elite</button></div>@foreach($schedules as $name=>$items)<div class="schedule-list {{ $name === 'amateur' ? 'active' : '' }}" data-schedule-panel="{{ $name }}">@foreach($compact ? array_slice($items,0,3) : $items as $item)<div class="schedule-row"><time>{{ $item['time'] }}</time><strong>{{ $item['event'] }}</strong><span>{{ $item['class'] }}</span></div>@endforeach</div>@endforeach</div>
