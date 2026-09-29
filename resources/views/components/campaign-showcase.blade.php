@@ -10,25 +10,18 @@
     <div class="campaign-carousel">
         <div class="campaign-viewport" data-campaign-viewport aria-label="Campaign showcase">
             @foreach($campaign as $item)
-                @php($mediaAvailable = !empty($item['path']) && file_exists(public_path($item['path'])))
-                @php($posterAvailable = !empty($item['poster']) && file_exists(public_path($item['poster'])))
                 <article class="campaign-slide" data-campaign-slide>
-                    <div class="campaign-media campaign-media--{{ $item['fit'] ?? 'cover' }}">
-                        @if($mediaAvailable && $item['type'] === 'video')
-                            <video muted playsinline controls preload="none" data-campaign-video data-src="{{ asset($item['path']) }}" @if($posterAvailable) poster="{{ asset($item['poster']) }}" @endif aria-label="{{ $item['alt'] ?? $item['title'] }}"></video>
-                        @elseif($mediaAvailable)
-                            <img src="{{ asset($item['path']) }}" alt="{{ $item['alt'] ?? $item['title'] }}" loading="lazy">
-                        @else
-                            <div class="campaign-placeholder" role="img" aria-label="{{ $item['alt'] ?? $item['title'] }}">
-                                <span>{{ $item['category'] }}</span>
-                                <b>{{ $item['title'] }}</b>
-                            </div>
-                        @endif
+                    <div class="campaign-media campaign-media--contain">
+                        <img
+                            src="{{ asset($item['path']) }}"
+                            alt="{{ $item['alt'] }}"
+                            loading="{{ $loop->first ? 'eager' : 'lazy' }}"
+                            @if($loop->first) fetchpriority="high" @endif
+                        >
                     </div>
                     <div class="campaign-caption">
                         <p class="eyebrow">{{ $item['category'] }}</p>
                         <h3>{{ $item['title'] }}</h3>
-                        @if(!empty($item['description']))<p>{{ $item['description'] }}</p>@endif
                     </div>
                 </article>
             @endforeach

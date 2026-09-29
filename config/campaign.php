@@ -1,33 +1,29 @@
 <?php
 
+// Keep this manifest alphabetized by filename so the carousel order is stable in every environment.
 return [
-    // Add files under public/media/campaign, then set the matching relative path here.
     [
-        'path' => null,
-        'type' => 'image',
-        'title' => 'The night belongs to everyone',
+        'path' => 'posters/icahn-poster-blue.png',
+        'title' => 'Icahn Poster — Blue',
         'category' => 'Campaign poster',
-        'description' => 'A bold event identity for the first edition.',
-        'alt' => 'Icahn Memorial campaign poster',
-        'fit' => 'contain',
+        'alt' => 'Icahn Memorial campaign poster in blue',
     ],
     [
-        'path' => null,
-        'type' => 'image',
-        'title' => 'Run the city',
-        'category' => 'Outdoor advertising',
-        'description' => 'A large-format city campaign built around the meeting.',
-        'alt' => 'Icahn Memorial outdoor advertising concept',
-        'fit' => 'cover',
+        'path' => 'posters/icahn-poster-green.png',
+        'title' => 'Icahn Poster — Green',
+        'category' => 'Campaign poster',
+        'alt' => 'Icahn Memorial campaign poster in green',
     ],
     [
-        'path' => null,
-        'type' => 'video',
-        'title' => 'Under the lights',
-        'category' => 'Event trailer',
-        'description' => 'A short moving introduction to the atmosphere of the night.',
-        'alt' => 'Icahn Memorial event trailer',
-        'poster' => null,
-        'fit' => 'cover',
+        'path' => 'posters/icahn-poster-red.png',
+        'title' => 'Icahn Poster — Red',
+        'category' => 'Campaign poster',
+        'alt' => 'Icahn Memorial campaign poster in red',
+    ],
+    [
+        'path' => 'posters/icahn-poster-yellow.png',
+        'title' => 'Icahn Poster — Yellow',
+        'category' => 'Campaign poster',
+        'alt' => 'Icahn Memorial campaign poster in yellow',
     ],
 ];
