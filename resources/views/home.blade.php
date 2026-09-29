@@ -48,7 +48,7 @@
           <p class="eyebrow">On the clock</p>
           <h2>Timetable</h2>
         </div><a class="arrow-link" href="{{ route('timetable') }}">Full timetable →</a>
-      </div><x-timetable />
+      </div><x-timetable /><img class="timetable-stadium" src="{{ asset('images/icahn-time-stadium.png') }}" alt="" aria-hidden="true">
     </section>
     <section class="section latest-news">
       <div class="section-title">
