@@ -1,2 +1,2 @@
-@props(['eyebrow' => 'Aurora Track Night', 'title', 'intro' => null])
-<section class="page-heading"><p class="eyebrow">{{ $eyebrow }}</p><h1>{{ $title }}</h1>@if($intro)<p class="lede">{{ $intro }}</p>@endif</section>
+@props(['eyebrow' => 'Icahn Memorial', 'title', 'intro' => null, 'background' => null, 'theme' => null, 'sectionClass' => null])
+<section class="page-heading {{ $background ? 'page-heading--image page-heading--'.$theme : '' }} {{ $sectionClass }}" @if($background) style="background-image:url('{{ $background }}')" @endif><p class="eyebrow">{{ $eyebrow }}</p><h1>{{ $title }}</h1>@if($intro)<p class="lede">{{ $intro }}</p>@endif</section>
